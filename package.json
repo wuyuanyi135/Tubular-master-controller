@@ -1,13 +1,16 @@
 {
   "name": "master-controller",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "cross-env NODE_ENV=DEVELOPMENT concurrently --success first --kill-others \"electron .\" \"ng serve --watch\" ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && electron ."
   },
   "private": true,
   "dependencies": {
@@ -33,6 +36,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.4",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
