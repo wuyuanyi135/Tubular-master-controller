@@ -9,12 +9,11 @@ import { MenuService } from 'src/app/shared/menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  menu: Array<MenuItem>
+  menu: Array<MenuItem>;
 
   constructor(menu: MenuService) {
-    menu.registerMenuItem(new MenuItem("Main Page", "/"))
 
-    this.menu = menu.getMenuItems()
+    this.menu = menu.getMenuItems();
   }
   ngOnInit() {
   }

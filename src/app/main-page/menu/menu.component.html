@@ -1,13 +1,16 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+<mat-sidenav-container class="side-container">
+  <mat-sidenav #sidenav id="sidenav" mode="side" opened fixedTopGap="92">
+    <ul class="menu-list">
+      <nav *ngFor="let item of menu">
+        <li class="menu-item menu-item-font">
+          {{item.displayName}}
 
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <ul>
-      <li *ngFor="let item of menu">
-        {{item.displayName}}
-      </li>
+        </li>
+        <hr class="hline"/>
+      </nav>
     </ul>
-  </mat-sidenav-content>
+  </mat-sidenav>
+  <div class="content">
+
+  </div>
 </mat-sidenav-container>

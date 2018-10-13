@@ -3,8 +3,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './main-page.component';
 
-import { MatToolbarModule, MatSidenavModule, MatCheckboxModule, MatFormFieldModule, MatInputModule } from "@angular/material";
+import {
+  MatToolbarModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatCardModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MenuService} from '../shared/menu.service';
+import {MenuItem} from '../shared/menu-item';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,11 +24,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatCardModule
   ],
   declarations: [MainPageComponent, MenuComponent],
   exports: [
     MainPageComponent
   ]
 })
-export class MainPageModule { }
+export class MainPageModule {
+  constructor(private menuService: MenuService) {
+      menuService.registerMenuItem(new MenuItem('Main Page', '/'));
+  }
+}

@@ -4,7 +4,7 @@
   "main": "main.js",
   "scripts": {
     "ng": "ng",
-    "start": "cross-env NODE_ENV=DEVELOPMENT concurrently --success first --kill-others \"electron .\" \"ng serve --watch\" ",
+    "start": "cross-env NODE_ENV=DEVELOPMENT concurrently --success first --kill-others \"wait-port localhost:4200 && electron .\" \"ng serve --watch\" ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,6 +19,7 @@
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
+    "@angular/flex-layout": "^7.0.0-beta.19",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
     "@angular/material": "^6.4.7",
@@ -53,6 +54,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "wait-port": "^0.2.2"
   }
 }
