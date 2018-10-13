@@ -10,7 +10,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatListModule,
-  MatCardModule
+  MatCardModule, MatIconModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MenuService} from '../shared/menu.service';
@@ -26,7 +26,8 @@ import {MenuItem} from '../shared/menu-item';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   declarations: [MainPageComponent, MenuComponent],
   exports: [

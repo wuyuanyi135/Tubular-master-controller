@@ -3,3 +3,12 @@
   flex-direction: column;
   flex-grow: 1;
 }
+
+.titlebar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.titlebar-spacer {
+  flex: 1 1 auto;
+}
