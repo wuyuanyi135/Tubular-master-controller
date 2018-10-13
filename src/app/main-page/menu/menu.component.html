@@ -1,0 +1,13 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ul>
+      <li *ngFor="let item of menu">
+        {{item.displayName}}
+      </li>
+    </ul>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -11,8 +11,11 @@ function createWindow () {
     icon: `file://${__dirname}/dist/assets/logo.png`
   })
 
+  win.setMenu(null);
+
   if (process.env.NODE_ENV == "DEVELOPMENT") {
     win.loadURL('http://localhost:4200/')
+    win.webContents.openDevTools()
   } else {
     win.loadURL(`file://${__dirname}/dist/index.html`)
   }
