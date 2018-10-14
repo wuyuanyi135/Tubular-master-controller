@@ -1,10 +1,11 @@
-import { MainPageModule } from './main-page/main-page.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {MainPageModule} from './main-page/main-page.module';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
+import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {RouterModule} from '@angular/router';
     BrowserModule,
     BrowserAnimationsModule,
     MainPageModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),  // the route is injected later by the route service
+    LoggerModule.forRoot({level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.OFF})
   ],
   providers: [],
   bootstrap: [AppComponent]

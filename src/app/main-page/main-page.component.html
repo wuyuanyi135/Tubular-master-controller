@@ -2,17 +2,17 @@
   <span>Master Controller</span>
   <span class="titlebar-spacer"></span>
 
-  <span *ngIf="native.isNative()">
-    <button mat-icon-button (click)="native.minimizeWindow()">
-      <mat-icon>remove</mat-icon>
-    </button>
-    <button mat-icon-button (click)="native.toggleMaximizeWindow()">
-      <mat-icon>{{native.isMaximized() ? "fullscreen_exit" : "fullscreen"}}</mat-icon>
-    </button>
-    <button mat-icon-button (click)="native.exit()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </span>
+  <!--<span *ngIf="native.isNative()">-->
+    <!--<button mat-icon-button (click)="native.minimizeWindow()">-->
+      <!--<mat-icon>remove</mat-icon>-->
+    <!--</button>-->
+    <!--<button mat-icon-button (click)="native.toggleMaximizeWindow()">-->
+      <!--<mat-icon>{{native.isMaximized() ? "fullscreen_exit" : "fullscreen"}}</mat-icon>-->
+    <!--</button>-->
+    <!--<button mat-icon-button (click)="native.exit()">-->
+      <!--<mat-icon>close</mat-icon>-->
+    <!--</button>-->
+  <!--</span>-->
 </mat-toolbar>
 
 <app-menu></app-menu>

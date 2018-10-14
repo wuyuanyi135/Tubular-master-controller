@@ -15,8 +15,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MenuService} from '../shared/menu.service';
 import {MenuItem} from '../shared/menu-item';
 import {MainPageContentComponent} from './main-page-content/main-page-content.component';
-import {RouterService} from '../shared/router.service';
 import {SharedModule} from '../shared/shared.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
@@ -32,7 +32,8 @@ import {SharedModule} from '../shared/shared.module';
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forChild([{path: '', redirectTo: '/homepage', pathMatch: 'full'}, {path: 'homepage', component: MainPageContentComponent}])
   ],
   declarations: [MainPageComponent, MenuComponent, MainPageContentComponent],
   exports: [
@@ -40,8 +41,6 @@ import {SharedModule} from '../shared/shared.module';
   ]
 })
 export class MainPageModule {
-  constructor(private menuService: MenuService, private routeService: RouterService) {
-    menuService.registerMenuItem(new MenuItem('Main Page', '/'));
-    routeService.registerRoute('/', MainPageComponent);
+  constructor(private menuService: MenuService) {
   }
 }
