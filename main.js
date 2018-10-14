@@ -8,14 +8,13 @@ function createWindow () {
     width: 600,
     height: 600,
     backgroundColor: '#ffffff',
-    icon: `file://${__dirname}/dist/assets/logo.png`
+    icon: `file://${__dirname}/dist/assets/logo.png`,
+    frame: false
   })
 
-  win.setMenu(null);
-
+//  win.setMenu(null);
   if (process.env.NODE_ENV == "DEVELOPMENT") {
     win.loadURL('http://localhost:4200/')
-    win.webContents.openDevTools()
   } else {
     win.loadURL(`file://${__dirname}/dist/index.html`)
   }
